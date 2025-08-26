@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بوابة الدفع</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {font-family: Tahoma, sans-serif; background: #f4f6f9; margin:0; padding:0;}
+    .container {max-width: 420px; margin: 50px auto; background:#fff; padding:25px; border-radius:16px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .header {text-align:center; margin-bottom:20px;}
+    .header h2 {margin:0; color:#333;}
+    .amount-box {background:#f1f1f1; padding:15px; border-radius:10px; text-align:center; margin-bottom:20px;}
+    .amount-box span {font-size:20px; font-weight:bold; color:#444;}
+    .payment-methods {margin-bottom:20px;}
+    .method {display:flex; align-items:center; background:#fafafa; padding:10px; border-radius:8px; border:1px solid #ddd; margin-bottom:10px; cursor:pointer;}
+    .method:hover {background:#eef3f8;}
+    .method input {margin-left:10px;}
+    .btn {display:block; width:100%; padding:12px; background:#007bff; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;}
+    .btn:hover {background:#0056b3;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>بوابة الدفع</h2>
+      <p>معاملتك آمنة 100%</p>
+    </div>
+    <div class="amount-box">
+      <p>إجمالي الدفع</p>
+      <span>5.89 MAD</span>
+      <p>رقم الطلب: 13519484372</p>
+    </div>
+    <div class="payment-methods">
+      <h3>اختر وسيلة الدفع:</h3>
+      <label class="method"><input type="radio" name="method" value="visa"> بطاقة Visa</label>
+      <label class="method"><input type="radio" name="method" value="mastercard"> بطاقة Mastercard</label>
+      <label class="method"><input type="radio" name="method" value="jcb"> بطاقة JCB</label>
+    </div>
+    <button class="btn" onclick="payNow()">ادفع الآن</button>
+  </div>
+
+  <script>
+    function payNow() {
+      const method = document.querySelector('input[name="method"]:checked');
+      if (!method) {
+        alert("من فضلك اختر وسيلة الدفع");
+        return;
+      }
+      // مؤقت: نوجه المستخدم لصفحة نجاح الدفع
+      window.location.href = "success.html";
+    }
+  </script>
+</body>
+</html>
